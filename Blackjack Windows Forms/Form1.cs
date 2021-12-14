@@ -16,5 +16,6 @@ namespace Blackjack_Windows_Forms
         {
             InitializeComponent();
         }
+
     }
 }
