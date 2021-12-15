@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Blackjack
+namespace Blackjack_Windows_Forms
 {
     class KaartDeck
     {

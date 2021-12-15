@@ -16,5 +16,10 @@ namespace Blackjack_Windows_Forms.Frontend
         {
             InitializeComponent();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

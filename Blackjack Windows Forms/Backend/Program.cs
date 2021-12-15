@@ -14,6 +14,7 @@ namespace Blackjack_Windows_Forms
         [STAThread]
         static void Main()
         {
+            Spel spel = new Spel();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
