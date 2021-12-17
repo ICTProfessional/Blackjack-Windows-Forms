@@ -38,6 +38,7 @@
             this.voegSpelersToeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herstartSpelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_StartSpel = new System.Windows.Forms.Button();
+            this.lbl_Punten = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,7 +78,7 @@
             this.algemeenToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -88,7 +89,7 @@
             this.voegSpelersToeToolStripMenuItem,
             this.herstartSpelToolStripMenuItem});
             this.algemeenToolStripMenuItem.Name = "algemeenToolStripMenuItem";
-            this.algemeenToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
+            this.algemeenToolStripMenuItem.Size = new System.Drawing.Size(91, 26);
             this.algemeenToolStripMenuItem.Text = "Algemeen";
             // 
             // spelregelsTonenToolStripMenuItem
@@ -103,9 +104,9 @@
             this.lbl_Kaarten.AutoSize = true;
             this.lbl_Kaarten.Location = new System.Drawing.Point(313, 246);
             this.lbl_Kaarten.Name = "lbl_Kaarten";
-            this.lbl_Kaarten.Size = new System.Drawing.Size(203, 16);
+            this.lbl_Kaarten.Size = new System.Drawing.Size(74, 16);
             this.lbl_Kaarten.TabIndex = 7;
-            this.lbl_Kaarten.Text = "Harten 8, Klaveren 9, Harten boer";
+            this.lbl_Kaarten.Text = "<[kaarten]>";
             this.lbl_Kaarten.Click += new System.EventHandler(this.label1_Click);
             // 
             // voegSpelersToeToolStripMenuItem
@@ -129,11 +130,21 @@
             this.btn_StartSpel.Text = "Start spel";
             this.btn_StartSpel.UseVisualStyleBackColor = true;
             // 
+            // lbl_Punten
+            // 
+            this.lbl_Punten.AutoSize = true;
+            this.lbl_Punten.Location = new System.Drawing.Point(316, 279);
+            this.lbl_Punten.Name = "lbl_Punten";
+            this.lbl_Punten.Size = new System.Drawing.Size(148, 16);
+            this.lbl_Punten.TabIndex = 9;
+            this.lbl_Punten.Text = "Aantal punten: <punten>";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbl_Punten);
             this.Controls.Add(this.btn_StartSpel);
             this.Controls.Add(this.lbl_Kaarten);
             this.Controls.Add(this.lbl_SpelerNaam);
@@ -162,6 +173,7 @@
         private System.Windows.Forms.ToolStripMenuItem voegSpelersToeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem herstartSpelToolStripMenuItem;
         private System.Windows.Forms.Button btn_StartSpel;
+        private System.Windows.Forms.Label lbl_Punten;
     }
 }
 
