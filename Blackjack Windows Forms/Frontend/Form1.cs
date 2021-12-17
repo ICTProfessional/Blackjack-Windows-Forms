@@ -15,6 +15,7 @@ namespace Blackjack_Windows_Forms
         public Form1()
         {
             InitializeComponent();
+            Spel spel = new Spel();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -28,6 +29,11 @@ namespace Blackjack_Windows_Forms
         }
 
         private void spelregelsTonenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
