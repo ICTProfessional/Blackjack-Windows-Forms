@@ -34,14 +34,16 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.algemeenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spelregelsTonenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbl_SpelerGeld = new System.Windows.Forms.Label();
-            this.lbl_SpelerInzet = new System.Windows.Forms.Label();
             this.lbl_Kaarten = new System.Windows.Forms.Label();
+            this.voegSpelersToeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.herstartSpelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_StartSpel = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_TrekKaart
             // 
+            this.btn_TrekKaart.Enabled = false;
             this.btn_TrekKaart.Location = new System.Drawing.Point(155, 78);
             this.btn_TrekKaart.Name = "btn_TrekKaart";
             this.btn_TrekKaart.Size = new System.Drawing.Size(144, 111);
@@ -62,7 +64,7 @@
             // lbl_SpelerNaam
             // 
             this.lbl_SpelerNaam.AutoSize = true;
-            this.lbl_SpelerNaam.Location = new System.Drawing.Point(355, 78);
+            this.lbl_SpelerNaam.Location = new System.Drawing.Point(369, 125);
             this.lbl_SpelerNaam.Name = "lbl_SpelerNaam";
             this.lbl_SpelerNaam.Size = new System.Drawing.Size(101, 16);
             this.lbl_SpelerNaam.TabIndex = 2;
@@ -82,7 +84,9 @@
             // algemeenToolStripMenuItem
             // 
             this.algemeenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.spelregelsTonenToolStripMenuItem});
+            this.spelregelsTonenToolStripMenuItem,
+            this.voegSpelersToeToolStripMenuItem,
+            this.herstartSpelToolStripMenuItem});
             this.algemeenToolStripMenuItem.Name = "algemeenToolStripMenuItem";
             this.algemeenToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
             this.algemeenToolStripMenuItem.Text = "Algemeen";
@@ -90,26 +94,9 @@
             // spelregelsTonenToolStripMenuItem
             // 
             this.spelregelsTonenToolStripMenuItem.Name = "spelregelsTonenToolStripMenuItem";
-            this.spelregelsTonenToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
+            this.spelregelsTonenToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.spelregelsTonenToolStripMenuItem.Text = "Spelregels tonen";
-            // 
-            // lbl_SpelerGeld
-            // 
-            this.lbl_SpelerGeld.AutoSize = true;
-            this.lbl_SpelerGeld.Location = new System.Drawing.Point(363, 125);
-            this.lbl_SpelerGeld.Name = "lbl_SpelerGeld";
-            this.lbl_SpelerGeld.Size = new System.Drawing.Size(93, 16);
-            this.lbl_SpelerGeld.TabIndex = 5;
-            this.lbl_SpelerGeld.Text = "<Speler Geld>";
-            // 
-            // lbl_SpelerInzet
-            // 
-            this.lbl_SpelerInzet.AutoSize = true;
-            this.lbl_SpelerInzet.Location = new System.Drawing.Point(363, 173);
-            this.lbl_SpelerInzet.Name = "lbl_SpelerInzet";
-            this.lbl_SpelerInzet.Size = new System.Drawing.Size(91, 16);
-            this.lbl_SpelerInzet.TabIndex = 6;
-            this.lbl_SpelerInzet.Text = "<Speler Inzet>";
+            this.spelregelsTonenToolStripMenuItem.Click += new System.EventHandler(this.spelregelsTonenToolStripMenuItem_Click);
             // 
             // lbl_Kaarten
             // 
@@ -121,14 +108,34 @@
             this.lbl_Kaarten.Text = "Harten 8, Klaveren 9, Harten boer";
             this.lbl_Kaarten.Click += new System.EventHandler(this.label1_Click);
             // 
+            // voegSpelersToeToolStripMenuItem
+            // 
+            this.voegSpelersToeToolStripMenuItem.Name = "voegSpelersToeToolStripMenuItem";
+            this.voegSpelersToeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.voegSpelersToeToolStripMenuItem.Text = "Voeg spelers toe";
+            // 
+            // herstartSpelToolStripMenuItem
+            // 
+            this.herstartSpelToolStripMenuItem.Name = "herstartSpelToolStripMenuItem";
+            this.herstartSpelToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.herstartSpelToolStripMenuItem.Text = "Herstart spel";
+            // 
+            // btn_StartSpel
+            // 
+            this.btn_StartSpel.Location = new System.Drawing.Point(341, 320);
+            this.btn_StartSpel.Name = "btn_StartSpel";
+            this.btn_StartSpel.Size = new System.Drawing.Size(129, 68);
+            this.btn_StartSpel.TabIndex = 8;
+            this.btn_StartSpel.Text = "Start spel";
+            this.btn_StartSpel.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_StartSpel);
             this.Controls.Add(this.lbl_Kaarten);
-            this.Controls.Add(this.lbl_SpelerInzet);
-            this.Controls.Add(this.lbl_SpelerGeld);
             this.Controls.Add(this.lbl_SpelerNaam);
             this.Controls.Add(this.btn_EindigBeurt);
             this.Controls.Add(this.btn_TrekKaart);
@@ -151,9 +158,10 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem algemeenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem spelregelsTonenToolStripMenuItem;
-        private System.Windows.Forms.Label lbl_SpelerGeld;
-        private System.Windows.Forms.Label lbl_SpelerInzet;
         private System.Windows.Forms.Label lbl_Kaarten;
+        private System.Windows.Forms.ToolStripMenuItem voegSpelersToeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem herstartSpelToolStripMenuItem;
+        private System.Windows.Forms.Button btn_StartSpel;
     }
 }
 

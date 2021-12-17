@@ -26,5 +26,10 @@ namespace Blackjack_Windows_Forms
         {
 
         }
+
+        private void spelregelsTonenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

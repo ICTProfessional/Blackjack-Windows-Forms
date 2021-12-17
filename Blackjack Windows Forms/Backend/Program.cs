@@ -12,7 +12,7 @@ namespace Blackjack_Windows_Forms
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        public static void Main()
         {
             Spel spel = new Spel();
             Application.EnableVisualStyles();
