@@ -96,6 +96,12 @@ namespace Blackjack_Windows_Forms.Frontend
             //Wisselt speler
             spel.WisselHuidigPersoon();
             UpdateLabels();
+            // Checkt of de speler de dealer is
+            if (spel.GeefHuidigeSpeler().Naam == "Dealer")
+            {
+                btn_EindigBeurt.Enabled = false;
+                btn_TrekKaart.Enabled = false;
+            }
         }
     }
 }

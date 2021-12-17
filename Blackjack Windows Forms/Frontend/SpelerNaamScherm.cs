@@ -15,6 +15,10 @@ namespace Blackjack_Windows_Forms.Frontend
 
         public string GeefNaam()
         {
+            if (txt_SpelerNaam.Text == "Dealer")
+            {
+                return "DeaIer";
+            }
             return txt_SpelerNaam.Text;
         }
         public SpelerNaamScherm(int _spelerRang)

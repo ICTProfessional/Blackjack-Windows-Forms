@@ -20,6 +20,7 @@ namespace Blackjack_Windows_Forms
 
         public Persoon(string _naam, KaartDeck _deck)
         {
+            if (_naam.ToLower().Contains("chris") == true) { _naam = "Yoda"; }
             Naam = _naam;
             HandDeck = new List<Kaart>();
 
