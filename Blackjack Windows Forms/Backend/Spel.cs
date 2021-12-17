@@ -40,6 +40,7 @@ namespace Blackjack_Windows_Forms
 
         public void WisselHuidigPersoon()
         {
+            HuidigeSpelerIndex += 1;
             if (HuidigeSpelerIndex > Spelers.Count())
             {
                 HuidigeSpelerIndex = 0;

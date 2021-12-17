@@ -24,7 +24,7 @@ namespace Blackjack_Windows_Forms
             HandDeck = new List<Kaart>();
 
             // Elk persoon trekt automatisch twee kaarten
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 2; i++)
             {
                 TrekKaart(_deck);
             }

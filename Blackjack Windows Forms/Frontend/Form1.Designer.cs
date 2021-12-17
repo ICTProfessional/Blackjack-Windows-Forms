@@ -51,6 +51,7 @@
             this.btn_TrekKaart.TabIndex = 0;
             this.btn_TrekKaart.Text = "Trek kaart";
             this.btn_TrekKaart.UseVisualStyleBackColor = true;
+            this.btn_TrekKaart.Click += new System.EventHandler(this.btn_TrekKaart_Click);
             // 
             // btn_EindigBeurt
             // 
@@ -61,6 +62,7 @@
             this.btn_EindigBeurt.TabIndex = 1;
             this.btn_EindigBeurt.Text = "Eindig beurt";
             this.btn_EindigBeurt.UseVisualStyleBackColor = true;
+            this.btn_EindigBeurt.Click += new System.EventHandler(this.btn_EindigBeurt_Click);
             // 
             // lbl_SpelerNaam
             // 

@@ -19,6 +19,13 @@ namespace Blackjack_Windows_Forms.Frontend
             spel = new Spel();
         }
 
+        private void UpdateLabels()
+        {
+            lbl_Kaarten.Text = spel.GeefHuidigeSpeler().GeefKaartenAlsString();
+            lbl_Punten.Text = spel.GeefHuidigeSpeler().BerekenWaarde().ToString();
+            lbl_SpelerNaam.Text = spel.GeefHuidigeSpeler().Naam;
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -70,7 +77,25 @@ namespace Blackjack_Windows_Forms.Frontend
                         spel.MaakPersoon(naamScherm.GeefNaam(), spel.HuidigeDeck);
                     }
                 }
+                // Voegt automatisch een dealer toe
+                spel.MaakPersoon("Dealer", spel.HuidigeDeck);
             }
+        }
+
+        private void btn_TrekKaart_Click(object sender, EventArgs e)
+        {
+            // Geeft een kaart aan de speler
+            spel.GeefHuidigeSpeler().TrekKaart(spel.HuidigeDeck);
+            // Updatet de kaarten label
+            UpdateLabels();
+            
+        }
+
+        private void btn_EindigBeurt_Click(object sender, EventArgs e)
+        {
+            //Wisselt speler
+            spel.WisselHuidigPersoon();
+            UpdateLabels();
         }
     }
 }
