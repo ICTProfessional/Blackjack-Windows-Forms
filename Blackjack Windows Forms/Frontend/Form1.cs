@@ -145,7 +145,15 @@ namespace Blackjack_Windows_Forms.Frontend
                 {
                     eindScherm.ZetSpelerInLijst(speler.Naam, speler.BerekenWaarde());
                 }
-                eindScherm.ZetSpelerAlsWinnaar(spel.BepaalWinnaar().Naam);
+                var winnaar = spel.BepaalWinnaar();
+                if (winnaar == null)
+                {
+                    eindScherm.ZetSpelerAlsWinnaar("Niemand");
+                }
+                else
+                {
+                    eindScherm.ZetSpelerAlsWinnaar(spel.BepaalWinnaar().Naam);
+                }
                 if (eindScherm.ShowDialog() == DialogResult.OK)
                 {
                     // Herstelt het spel

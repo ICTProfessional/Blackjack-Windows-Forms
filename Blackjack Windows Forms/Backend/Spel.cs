@@ -81,8 +81,14 @@ namespace Blackjack_Windows_Forms
                 }
             }
 
+            if (mogelijkeWinnaars.Count == 0)
+            {
+                return null;
+            }
+
             // Pikt een persoon en haalt degenen weg die lager zijn dan hem.
             Persoon gekozenPersoon = mogelijkeWinnaars[0];
+            // Hij doet dit zo lang tot er een mogelijke winnaar overblijft
             while (mogelijkeWinnaars.Count > 1)
             {
                 foreach (var speler in Spelers)
