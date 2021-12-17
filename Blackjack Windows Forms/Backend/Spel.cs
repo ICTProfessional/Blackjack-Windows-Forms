@@ -19,7 +19,7 @@ namespace Blackjack_Windows_Forms
         /// <summary>
         /// De index van de persoon in de lijst Spelers die aan de beurt is
         /// </summary>
-        private int HuidigeSpelerIndex { get; set; }
+        public int HuidigeSpelerIndex { get; set; }
 
         public Spel()
         {
@@ -28,16 +28,26 @@ namespace Blackjack_Windows_Forms
             HuidigeSpelerIndex = 0;
         }
 
+        /// <summary>
+        /// Hervult de deck
+        /// </summary>
         public void MaakNieuweDeck()
         {
             HuidigeDeck = new KaartDeck();
         }
 
+        /// <summary>
+        /// Geeft de gegevens van de huidige speler die aan de beurt is.
+        /// </summary>
+        /// <returns></returns>
         public Persoon GeefHuidigeSpeler()
         {
             return Spelers[HuidigeSpelerIndex];
         }
 
+        /// <summary>
+        /// De huidige speler index wordt met een verhoogd
+        /// </summary>
         public void WisselHuidigPersoon()
         {
             HuidigeSpelerIndex += 1;
@@ -48,11 +58,54 @@ namespace Blackjack_Windows_Forms
         }
 
         /// <summary>
-        /// Vraagt voor een aantal personen en stopt deze in de lijst Spelers
+        /// Vraagt voor een naam en stopt deze in de lijst Spelers. Speler trekt twee kaarten uit _deck
         /// </summary>
         public void MaakPersoon(string _naam, KaartDeck _deck)
         {
             Spelers.Add(new Persoon(_naam, _deck));
+        }
+
+        /// <summary>
+        /// Bepaalt welke speler heeft gewonnen van Blackjack
+        /// </summary>
+        /// <returns></returns>
+        public Persoon BepaalWinnaar()
+        {
+            List<Persoon> mogelijkeWinnaars = Spelers.ToList();
+            // Haalt de spelers weg die over de 21 zijn belandt
+            foreach (var speler in Spelers)
+            {
+                if (speler.BerekenWaarde() > 21)
+                {
+                    mogelijkeWinnaars.Remove(speler);
+                }
+            }
+
+            // Pikt een persoon en haalt degenen weg die lager zijn dan hem.
+            Persoon gekozenPersoon = mogelijkeWinnaars[0];
+            while (mogelijkeWinnaars.Count > 1)
+            {
+                foreach (var speler in Spelers)
+                {
+                    if (mogelijkeWinnaars.Contains(speler))
+                    {
+                        if (speler.BerekenWaarde() < gekozenPersoon.BerekenWaarde())
+                        {
+                            mogelijkeWinnaars.Remove(speler);
+                        }
+                        else if (gekozenPersoon.BerekenWaarde() < speler.BerekenWaarde())
+                        {
+                            mogelijkeWinnaars.Remove(gekozenPersoon);
+                            gekozenPersoon = speler;
+                        }
+                        else if (gekozenPersoon.Naam != speler.Naam)
+                        {
+                            mogelijkeWinnaars.Remove(speler);
+                        }
+                    }
+                }
+            }
+            return mogelijkeWinnaars[0];
         }
     }
 }

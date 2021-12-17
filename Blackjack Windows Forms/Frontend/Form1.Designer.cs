@@ -1,6 +1,6 @@
 ﻿namespace Blackjack_Windows_Forms.Frontend
 {
-    partial class Form1
+    partial class Blackjack
     {
         /// <summary>
         /// Required designer variable.
@@ -39,6 +39,8 @@
             this.lbl_Kaarten = new System.Windows.Forms.Label();
             this.btn_StartSpel = new System.Windows.Forms.Button();
             this.lbl_Punten = new System.Windows.Forms.Label();
+            this.lb_SpelerLijst = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +69,7 @@
             // lbl_SpelerNaam
             // 
             this.lbl_SpelerNaam.AutoSize = true;
-            this.lbl_SpelerNaam.Location = new System.Drawing.Point(369, 125);
+            this.lbl_SpelerNaam.Location = new System.Drawing.Point(368, 125);
             this.lbl_SpelerNaam.Name = "lbl_SpelerNaam";
             this.lbl_SpelerNaam.Size = new System.Drawing.Size(101, 16);
             this.lbl_SpelerNaam.TabIndex = 2;
@@ -103,8 +105,8 @@
             // voegSpelersToeToolStripMenuItem
             // 
             this.voegSpelersToeToolStripMenuItem.Name = "voegSpelersToeToolStripMenuItem";
-            this.voegSpelersToeToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
-            this.voegSpelersToeToolStripMenuItem.Text = "Voeg spelers toe";
+            this.voegSpelersToeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.voegSpelersToeToolStripMenuItem.Text = "Verander spelers";
             this.voegSpelersToeToolStripMenuItem.Click += new System.EventHandler(this.voegSpelersToeToolStripMenuItem_Click);
             // 
             // herstartSpelToolStripMenuItem
@@ -116,7 +118,7 @@
             // lbl_Kaarten
             // 
             this.lbl_Kaarten.AutoSize = true;
-            this.lbl_Kaarten.Location = new System.Drawing.Point(313, 246);
+            this.lbl_Kaarten.Location = new System.Drawing.Point(368, 206);
             this.lbl_Kaarten.Name = "lbl_Kaarten";
             this.lbl_Kaarten.Size = new System.Drawing.Size(74, 16);
             this.lbl_Kaarten.TabIndex = 7;
@@ -125,7 +127,7 @@
             // 
             // btn_StartSpel
             // 
-            this.btn_StartSpel.Location = new System.Drawing.Point(341, 320);
+            this.btn_StartSpel.Location = new System.Drawing.Point(371, 305);
             this.btn_StartSpel.Name = "btn_StartSpel";
             this.btn_StartSpel.Size = new System.Drawing.Size(129, 68);
             this.btn_StartSpel.TabIndex = 8;
@@ -136,17 +138,38 @@
             // lbl_Punten
             // 
             this.lbl_Punten.AutoSize = true;
-            this.lbl_Punten.Location = new System.Drawing.Point(316, 279);
+            this.lbl_Punten.Location = new System.Drawing.Point(368, 243);
             this.lbl_Punten.Name = "lbl_Punten";
             this.lbl_Punten.Size = new System.Drawing.Size(148, 16);
             this.lbl_Punten.TabIndex = 9;
             this.lbl_Punten.Text = "Aantal punten: <punten>";
             // 
-            // Form1
+            // lb_SpelerLijst
+            // 
+            this.lb_SpelerLijst.FormattingEnabled = true;
+            this.lb_SpelerLijst.ItemHeight = 16;
+            this.lb_SpelerLijst.Location = new System.Drawing.Point(35, 222);
+            this.lb_SpelerLijst.Name = "lb_SpelerLijst";
+            this.lb_SpelerLijst.Size = new System.Drawing.Size(120, 180);
+            this.lb_SpelerLijst.TabIndex = 10;
+            this.lb_SpelerLijst.SelectedIndexChanged += new System.EventHandler(this.lb_SpelerLijst_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(49, 200);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 16);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Spelers";
+            // 
+            // Blackjack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lb_SpelerLijst);
             this.Controls.Add(this.lbl_Punten);
             this.Controls.Add(this.btn_StartSpel);
             this.Controls.Add(this.lbl_Kaarten);
@@ -155,7 +178,7 @@
             this.Controls.Add(this.btn_TrekKaart);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "Blackjack";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -178,6 +201,8 @@
         private System.Windows.Forms.ToolStripMenuItem herstartSpelToolStripMenuItem;
         private System.Windows.Forms.Button btn_StartSpel;
         private System.Windows.Forms.Label lbl_Punten;
+        private System.Windows.Forms.ListBox lb_SpelerLijst;
+        private System.Windows.Forms.Label label1;
     }
 }
 

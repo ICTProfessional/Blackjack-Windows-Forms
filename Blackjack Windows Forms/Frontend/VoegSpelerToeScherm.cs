@@ -21,5 +21,10 @@ namespace Blackjack_Windows_Forms.Frontend
         {
             return (int) num_AantalSpelers.Value;
         }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

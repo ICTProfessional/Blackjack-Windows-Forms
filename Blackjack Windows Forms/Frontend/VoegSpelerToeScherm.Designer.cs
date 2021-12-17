@@ -37,7 +37,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(100, 32);
+            this.label1.Location = new System.Drawing.Point(51, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(151, 16);
             this.label1.TabIndex = 0;
@@ -45,7 +45,7 @@
             // 
             // num_AantalSpelers
             // 
-            this.num_AantalSpelers.Location = new System.Drawing.Point(156, 77);
+            this.num_AantalSpelers.Location = new System.Drawing.Point(114, 85);
             this.num_AantalSpelers.Maximum = new decimal(new int[] {
             5,
             0,
@@ -69,7 +69,7 @@
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(139, 142);
+            this.button1.Location = new System.Drawing.Point(84, 148);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -80,7 +80,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 197);
+            this.ClientSize = new System.Drawing.Size(304, 200);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.num_AantalSpelers);
             this.Controls.Add(this.label1);
