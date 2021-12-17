@@ -9,7 +9,7 @@ namespace Blackjack_Windows_Forms
     internal class Persoon
     {
         /// <summary>
-        /// De naam van de speler
+        /// De naam van de persoon
         /// </summary>
         public string Naam { get; set; }
 
@@ -18,15 +18,26 @@ namespace Blackjack_Windows_Forms
         /// </summary>
         public List<Kaart> HandDeck { get; set; }
 
+        public Persoon(string _naam, KaartDeck _deck)
+        {
+            Naam = _naam;
+            HandDeck = new List<Kaart>();
+
+            // Elk persoon trekt automatisch twee kaarten
+            for (int i = 0; i < 5; i++)
+            {
+                TrekKaart(_deck);
+            }
+        }
+
         /// <summary>
         /// Levert een kaart van de kaartdeck naar de handdeck
         /// </summary>
         public void TrekKaart(KaartDeck _deck)
         {
-            Random rand = new Random(); // Zorgt voor het maken van willekeurige getallen
-            int Kaart = rand.Next(0, _deck.KaartenDeck.Count);
-            HandDeck.Add(_deck.KaartenDeck[Kaart]);
-            _deck.KaartenDeck.RemoveAt(Kaart);
+            Kaart eersteKaart = _deck.KaartenDeck[0];
+            HandDeck.Add(eersteKaart);
+            _deck.KaartenDeck.Remove(eersteKaart);
         }
 
         
@@ -38,6 +49,19 @@ namespace Blackjack_Windows_Forms
                 totaleWaarde += _kaart.KaartWaarde;
             }
             return totaleWaarde;
+        }
+
+        public string GeefKaartenAlsString()
+        {
+            string kaartString = string.Empty;
+            // Voegt elke kaartnaam toe
+            foreach (var kaart in HandDeck)
+            {
+                kaartString += $", {kaart.KaartNaam}";
+            }
+            // Haalt de eerste ', ' weg
+            kaartString = kaartString.Remove(0, 2);
+            return kaartString;
         }
     }
 }

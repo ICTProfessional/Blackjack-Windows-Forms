@@ -9,44 +9,49 @@ namespace Blackjack_Windows_Forms
     internal class Spel
     {
         /// <summary>
-        /// De spelers die meedoen aan het spel
+        /// De spelers die meedoen aan het spel (inclusief dealer)
         /// </summary>
-        public List<Speler> Spelers { get; set; }
-        /// <summary>
-        /// De dealer die meedoet aan het spel
-        /// </summary>
-        public Persoon Dealer { get; set; }
+        public List<Persoon> Spelers { get; set; }
         /// <summary>
         /// De kaartendeck die aanwezig is in het spel
         /// </summary>
         public KaartDeck HuidigeDeck { get; set; }
+        /// <summary>
+        /// De index van de persoon in de lijst Spelers die aan de beurt is
+        /// </summary>
+        private int HuidigeSpelerIndex { get; set; }
+
+        public Spel()
+        {
+            Spelers = new List<Persoon>();
+            HuidigeDeck = new KaartDeck();
+            HuidigeSpelerIndex = 0;
+        }
 
         public void MaakNieuweDeck()
         {
             HuidigeDeck = new KaartDeck();
         }
 
+        public Persoon GeefHuidigeSpeler()
+        {
+            return Spelers[HuidigeSpelerIndex];
+        }
+
+        public void WisselHuidigPersoon()
+        {
+            if (HuidigeSpelerIndex > Spelers.Count())
+            {
+                HuidigeSpelerIndex = 0;
+            }
+        }
+
         /// <summary>
         /// Vraagt voor een aantal personen en stopt deze in de lijst Spelers
         /// </summary>
-        public void MaakPersonen()
+        public void MaakPersoon(string _naam, KaartDeck _deck)
         {
-            // Vraagt om aantal personen
-            Console.WriteLine("Hoeveel spelers spelen mee?: ");
-
-            // Haalt alle spelers uit lijst Spelers weg
-            Spelers = new List<Speler>();
-
-            char invoer = Console.ReadKey().KeyChar;
-            int hoeveelheidSpelers = invoer - '0';
-
-            // Voegt personen toe aan lijst Spelers
-            for (int i = 1; i <= hoeveelheidSpelers; i++)
-            {
-                Console.WriteLine($"Hoe heet speler {i}?: ");
-                Spelers.Add(new Speler(Console.ReadLine()));
-            }
-            
+            Spelers.Add(new Persoon(_naam, _deck));
         }
     }
 }

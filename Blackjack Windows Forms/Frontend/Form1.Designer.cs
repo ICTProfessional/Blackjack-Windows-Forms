@@ -1,4 +1,4 @@
-﻿namespace Blackjack_Windows_Forms
+﻿namespace Blackjack_Windows_Forms.Frontend
 {
     partial class Form1
     {
@@ -34,9 +34,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.algemeenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spelregelsTonenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbl_Kaarten = new System.Windows.Forms.Label();
             this.voegSpelersToeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herstartSpelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbl_Kaarten = new System.Windows.Forms.Label();
             this.btn_StartSpel = new System.Windows.Forms.Button();
             this.lbl_Punten = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
@@ -44,16 +44,17 @@
             // 
             // btn_TrekKaart
             // 
+            this.btn_TrekKaart.Enabled = false;
             this.btn_TrekKaart.Location = new System.Drawing.Point(155, 78);
             this.btn_TrekKaart.Name = "btn_TrekKaart";
             this.btn_TrekKaart.Size = new System.Drawing.Size(144, 111);
             this.btn_TrekKaart.TabIndex = 0;
             this.btn_TrekKaart.Text = "Trek kaart";
             this.btn_TrekKaart.UseVisualStyleBackColor = true;
-            this.btn_TrekKaart.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_EindigBeurt
             // 
+            this.btn_EindigBeurt.Enabled = false;
             this.btn_EindigBeurt.Location = new System.Drawing.Point(543, 78);
             this.btn_EindigBeurt.Name = "btn_EindigBeurt";
             this.btn_EindigBeurt.Size = new System.Drawing.Size(144, 111);
@@ -88,15 +89,27 @@
             this.voegSpelersToeToolStripMenuItem,
             this.herstartSpelToolStripMenuItem});
             this.algemeenToolStripMenuItem.Name = "algemeenToolStripMenuItem";
-            this.algemeenToolStripMenuItem.Size = new System.Drawing.Size(91, 26);
+            this.algemeenToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
             this.algemeenToolStripMenuItem.Text = "Algemeen";
             // 
             // spelregelsTonenToolStripMenuItem
             // 
             this.spelregelsTonenToolStripMenuItem.Name = "spelregelsTonenToolStripMenuItem";
-            this.spelregelsTonenToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.spelregelsTonenToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
             this.spelregelsTonenToolStripMenuItem.Text = "Spelregels tonen";
-            this.spelregelsTonenToolStripMenuItem.Click += new System.EventHandler(this.spelregelsTonenToolStripMenuItem_Click);
+            // 
+            // voegSpelersToeToolStripMenuItem
+            // 
+            this.voegSpelersToeToolStripMenuItem.Name = "voegSpelersToeToolStripMenuItem";
+            this.voegSpelersToeToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
+            this.voegSpelersToeToolStripMenuItem.Text = "Voeg spelers toe";
+            this.voegSpelersToeToolStripMenuItem.Click += new System.EventHandler(this.voegSpelersToeToolStripMenuItem_Click);
+            // 
+            // herstartSpelToolStripMenuItem
+            // 
+            this.herstartSpelToolStripMenuItem.Name = "herstartSpelToolStripMenuItem";
+            this.herstartSpelToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
+            this.herstartSpelToolStripMenuItem.Text = "Herstart spel";
             // 
             // lbl_Kaarten
             // 
@@ -108,18 +121,6 @@
             this.lbl_Kaarten.Text = "<[kaarten]>";
             this.lbl_Kaarten.Click += new System.EventHandler(this.label1_Click);
             // 
-            // voegSpelersToeToolStripMenuItem
-            // 
-            this.voegSpelersToeToolStripMenuItem.Name = "voegSpelersToeToolStripMenuItem";
-            this.voegSpelersToeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.voegSpelersToeToolStripMenuItem.Text = "Voeg spelers toe";
-            // 
-            // herstartSpelToolStripMenuItem
-            // 
-            this.herstartSpelToolStripMenuItem.Name = "herstartSpelToolStripMenuItem";
-            this.herstartSpelToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.herstartSpelToolStripMenuItem.Text = "Herstart spel";
-            // 
             // btn_StartSpel
             // 
             this.btn_StartSpel.Location = new System.Drawing.Point(341, 320);
@@ -128,6 +129,7 @@
             this.btn_StartSpel.TabIndex = 8;
             this.btn_StartSpel.Text = "Start spel";
             this.btn_StartSpel.UseVisualStyleBackColor = true;
+            this.btn_StartSpel.Click += new System.EventHandler(this.btn_StartSpel_Click);
             // 
             // lbl_Punten
             // 

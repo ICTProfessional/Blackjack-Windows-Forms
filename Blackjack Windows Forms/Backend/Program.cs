@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Blackjack_Windows_Forms
+namespace Blackjack_Windows_Forms.Frontend
 {
     internal static class Program
     {
@@ -14,7 +14,6 @@ namespace Blackjack_Windows_Forms
         [STAThread]
         public static void Main()
         {
-            Spel spel = new Spel();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
