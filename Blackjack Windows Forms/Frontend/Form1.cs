@@ -28,6 +28,18 @@ namespace Blackjack_Windows_Forms.Frontend
             lbl_SpelerNaam.Text = spel.GeefHuidigeSpeler().Naam;
         }
 
+
+        /// <summary>
+        /// Zorgt ervoor dat een speler niet meer kaarten kan trekken als hij 21 punten heeft
+        /// </summary>
+        private void ControleerPunten()
+        {
+            if (spel.GeefHuidigeSpeler().BerekenWaarde() > 21)
+            {
+                btn_TrekKaart.Enabled = false;
+            }
+        }
+
         private void UpdateSpelerLijst()
         {
             lb_SpelerLijst.Items.Clear();
@@ -65,6 +77,8 @@ namespace Blackjack_Windows_Forms.Frontend
                 btn_TrekKaart.Enabled = true;
                 btn_StartSpel.Enabled = false;
 
+                ControleerPunten();
+
             }
             else
             {
@@ -85,10 +99,7 @@ namespace Blackjack_Windows_Forms.Frontend
             // Updatet de kaarten label
             UpdateLabels();
             // Schakelt de trek kaart knop uit als de waarde over de 21 is
-            if (spel.GeefHuidigeSpeler().BerekenWaarde() > 21)
-            {
-                btn_TrekKaart.Enabled = false;
-            }
+            ControleerPunten();
         }
 
         private void btn_EindigBeurt_Click(object sender, EventArgs e)
@@ -142,6 +153,7 @@ namespace Blackjack_Windows_Forms.Frontend
                         }
                     }
                 }
+                ControleerPunten();
             }
         }
 
