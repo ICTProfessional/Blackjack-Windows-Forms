@@ -143,9 +143,9 @@
             this.lbl_Punten.Location = new System.Drawing.Point(384, 171);
             this.lbl_Punten.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Punten.Name = "lbl_Punten";
-            this.lbl_Punten.Size = new System.Drawing.Size(124, 13);
+            this.lbl_Punten.Size = new System.Drawing.Size(52, 13);
             this.lbl_Punten.TabIndex = 9;
-            this.lbl_Punten.Text = "Aantal punten: <punten>";
+            this.lbl_Punten.Text = "<punten>";
             // 
             // lb_SpelerLijst
             // 
