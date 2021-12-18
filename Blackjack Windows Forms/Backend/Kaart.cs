@@ -22,10 +22,5 @@ namespace Blackjack_Windows_Forms
             KaartNaam = _naam;
             KaartWaarde = _waarde;
         }
-
-        public void BerekenenAWaarde(Persoon _speler)
-        {
-            // if() Hiervoor moet Persoon eerst afgemaakt zijn.
-        }
     }
 }
