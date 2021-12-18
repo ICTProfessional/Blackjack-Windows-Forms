@@ -25,6 +25,7 @@ namespace Blackjack_Windows_Forms
         {
             Spelers = new List<Persoon>();
             HuidigeDeck = new KaartDeck();
+            MaakPersoon("Dealer", HuidigeDeck, true);
             HuidigeSpelerIndex = 0;
         }
 
@@ -59,10 +60,18 @@ namespace Blackjack_Windows_Forms
 
         /// <summary>
         /// Vraagt voor een naam en stopt deze in de lijst Spelers. Speler trekt twee kaarten uit _deck
+        /// Als _isDealer false is, wordt de persoon op het begin van de lijst toegevoegd
         /// </summary>
-        public void MaakPersoon(string _naam, KaartDeck _deck)
+        public void MaakPersoon(string _naam, KaartDeck _deck, bool _isDealer)
         {
-            Spelers.Add(new Persoon(_naam, _deck));
+            if (_isDealer)
+            {
+                Spelers.Add(new Persoon(_naam, _deck));
+            }
+            else
+            {
+                Spelers.Insert(0, new Persoon(_naam, _deck));
+            }
         }
 
         /// <summary>

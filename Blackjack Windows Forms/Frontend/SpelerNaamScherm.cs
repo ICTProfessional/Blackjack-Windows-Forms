@@ -21,11 +21,14 @@ namespace Blackjack_Windows_Forms.Frontend
             }
             return txt_SpelerNaam.Text;
         }
-        public SpelerNaamScherm(int _spelerRang)
+        public SpelerNaamScherm()
         {
             InitializeComponent();
-            // Geeft aan welke speler op dat moment de naam krijgt
-            lbl_SpelerNaam.Text = lbl_SpelerNaam.Text.Replace("<int>", _spelerRang.ToString());
+        }
+
+        private void SpelerNaamScherm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
