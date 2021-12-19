@@ -195,5 +195,11 @@ namespace Blackjack_Windows_Forms.Frontend
             }
             UpdateSpelerLijst();
         }
+
+        private void spelregelsTonenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Spelregels spelregels = new Spelregels();
+            spelregels.ShowDialog();
+        }
     }
 }
