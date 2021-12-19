@@ -68,6 +68,12 @@
     <Compile Include="Frontend\SpelerNaamScherm.Designer.cs">
       <DependentUpon>SpelerNaamScherm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\Spelregels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\Spelregels.Designer.cs">
+      <DependentUpon>Spelregels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frontend\StartScherm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frontend\SpelerNaamScherm.resx">
       <DependentUpon>SpelerNaamScherm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\Spelregels.resx">
+      <DependentUpon>Spelregels.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frontend\StartScherm.resx">
       <DependentUpon>StartScherm.cs</DependentUpon>
