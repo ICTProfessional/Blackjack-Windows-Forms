@@ -37,6 +37,11 @@ namespace Blackjack_Windows_Forms
         public void TrekKaart(KaartDeck _deck)
         {
             Kaart eersteKaart = _deck.KaartenDeck[0];
+            // Verandert waarde van aas
+            if (eersteKaart.KaartNaam.ToLower().Contains("aas"))
+            {
+                eersteKaart.KaartWaarde = BerekenAWaarde();
+            }
             HandDeck.Add(eersteKaart);
             _deck.KaartenDeck.Remove(eersteKaart);
         }
@@ -63,6 +68,21 @@ namespace Blackjack_Windows_Forms
             // Haalt de eerste ', ' weg
             kaartString = kaartString.Remove(0, 2);
             return kaartString;
+        }
+        /// <summary>
+        /// Past de waarde van de aas aan op basis van context
+        /// </summary>
+        /// <returns></returns>
+        public int BerekenAWaarde()
+        {
+            if (BerekenWaarde() <= 10)
+            {
+                return 11;
+            }
+            else
+            {
+                return 1;
+            }
         }
     }
 }
