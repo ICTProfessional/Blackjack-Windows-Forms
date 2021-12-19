@@ -36,7 +36,7 @@
             // lbl_WinnaarNaam
             // 
             this.lbl_WinnaarNaam.AutoSize = true;
-            this.lbl_WinnaarNaam.Location = new System.Drawing.Point(365, 94);
+            this.lbl_WinnaarNaam.Location = new System.Drawing.Point(237, 12);
             this.lbl_WinnaarNaam.Name = "lbl_WinnaarNaam";
             this.lbl_WinnaarNaam.Size = new System.Drawing.Size(64, 16);
             this.lbl_WinnaarNaam.TabIndex = 0;
@@ -45,7 +45,7 @@
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(354, 218);
+            this.button1.Location = new System.Drawing.Point(226, 73);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -58,7 +58,7 @@
             this.lb_PlayerData.ItemHeight = 16;
             this.lb_PlayerData.Location = new System.Drawing.Point(12, 12);
             this.lb_PlayerData.Name = "lb_PlayerData";
-            this.lb_PlayerData.Size = new System.Drawing.Size(120, 84);
+            this.lb_PlayerData.Size = new System.Drawing.Size(162, 84);
             this.lb_PlayerData.TabIndex = 8;
             this.lb_PlayerData.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -66,7 +66,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(469, 190);
             this.Controls.Add(this.lb_PlayerData);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl_WinnaarNaam);
