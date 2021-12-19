@@ -31,5 +31,15 @@ namespace Blackjack_Windows_Forms.Frontend
         {
 
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

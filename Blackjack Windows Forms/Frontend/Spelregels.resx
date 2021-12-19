@@ -121,7 +121,8 @@
     <value>Het doel van blackjack is om zo dicht mogelijk bij 21 punten te komen zonder eroverheen te gaan.
 
 Bij blackjack speelt iedere speler tegen de dealer. 
-Iedere speler komt aan de beurt. Tijdens een beurt kan een speler kaarten trekken totdat de speler een waarde heeft die hoger is dan 21. </value>
+Iedere speler komt aan de beurt. Tijdens een beurt kan een speler kaarten trekken totdat de speler een waarde heeft die hoger is dan 21. 
+Het spel eindigt wanneer iedereen hun beurt heeft beëindigd.</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Elke speler heeft een aantal punten. De punten worden bepaald door de kaarten die de speler heeft getrokken.
