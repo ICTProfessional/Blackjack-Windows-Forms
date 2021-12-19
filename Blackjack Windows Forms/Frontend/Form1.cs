@@ -190,6 +190,16 @@ namespace Blackjack_Windows_Forms.Frontend
             SpelerNaamScherm naamScherm = new SpelerNaamScherm();
             if (naamScherm.ShowDialog(this) == DialogResult.OK)
             {
+                string gegevenNaam = naamScherm.GeefNaam();
+                // Checkt of de naam van de persoon al aanwezig is
+                foreach (var persoon in spel.Spelers)
+                {
+                    if (persoon.Naam == gegevenNaam)
+                    {
+                        MessageBox.Show(this, "Er bestaat al een speler met dezelfde naam!", "Doe niet aan identiteitsfraude, aub", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;                    
+                    }
+                }
                 // Voeg persoon toe op het begin van de lijst
                 spel.MaakPersoon(naamScherm.GeefNaam(), spel.HuidigeDeck, false);
             }
